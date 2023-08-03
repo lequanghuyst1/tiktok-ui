@@ -1,9 +1,10 @@
-import Button from './component/Button';
-import './App.css';
+
 function App() {
-  return (
-      <Button/>
-  )
+    return (
+      <div className="App">
+        <h1>ReactJs</h1>
+      </div>
+    )
 }
 
 export default App;
