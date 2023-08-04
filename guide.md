@@ -8,3 +8,5 @@
 htmltagwrapper
 prettier
 html tag wrapper
+
+# npm i @tippyjs/react thư viện làm lịch sử tìm kiếm
