@@ -1,0 +1,25 @@
+//Menu
+.menu-list {
+    width: 224px;
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+//Menu-item
+.menu-item {
+    margin-left: 0;
+    padding: 11px 16px;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    border-radius: 0;
+    line-height: 1.2;
+    &:hover {
+        background: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.menu-proper {
+    padding-bottom: 8px;
+}

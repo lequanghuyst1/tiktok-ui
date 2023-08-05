@@ -6,9 +6,9 @@
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--white);
-    border: 1px solid #ccc;
+    border: 1px solid transparent;
     user-select: none;
-    display: flex;
+    display: inline-flex;
     + .wrapper {
         margin-left: 16px;
     }
@@ -21,6 +21,11 @@
 .title + .icon {
     margin-left: 8px;
 }
+.icon{
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
 .rounded {
     border-radius: 52px;
     padding: 6px 16px;
@@ -31,7 +36,9 @@
         background-color: rgba(22, 24, 35, 0.03);
     }
 }
-
+.title{
+    flex: 1;
+}
 .primary {
     background-color: var(--primary);
     border-color: var(--primary);
