@@ -1,0 +1,60 @@
+.wrapper {
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-width: 100px;
+    padding: 9px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    user-select: none;
+    display: flex;
+    + .wrapper {
+        margin-left: 16px;
+    }
+    &.disable {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+.rounded {
+    border-radius: 52px;
+    padding: 6px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-color: rgba(22, 24, 35, 0.12);
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+        border-color: var(--primary);
+    }
+}
+.outline {
+    border-color: var(--primary);
+    color: var(--primary);
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.08);
+        border-color: var(--primary);
+    }
+}
+
+//Button size
+.small {
+    min-width: 96px;
+}
+.large {
+    padding: 14px 16px;
+    min-width: 116px;
+}
