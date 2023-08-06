@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 :root {
     --primary: rgba(254, 44, 85, 1);
@@ -21,11 +20,48 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'TikTokFont', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
+
+//Fonts embeded
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TikTokDisplayFont';
+    src: url('/assets/fonts/TikTokDisplayFont-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TikTokDisplayFont';
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TikTokDisplayFont';
+    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 button,
 input,
 [tabindex] {
@@ -48,13 +84,13 @@ body {
         letter-spacing: 0.03;
         border: none;
     }
-    .tippy-arrow{
+    .tippy-arrow {
         color: rgba(84, 84, 84, 0.92);
     }
-    .tippy-content{
+    .tippy-content {
         padding: 9px 9px;
     }
-    .tippy-box[data-placement^=bottom]>.tippy-arrow:before {
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
         top: -8px;
     }
 }

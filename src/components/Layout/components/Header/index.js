@@ -28,7 +28,8 @@ import AccountItem from '~/components/Layout/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Layout/Proper/Menu';
 import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
-
+import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Images';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -136,7 +137,7 @@ function Header() {
                         </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTippy>
@@ -146,12 +147,17 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
-                            <Tippy content="Inbox">
+                            <Tippy content="Message">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="inbox">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -163,11 +169,12 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
-                                src="https://toigingiuvedep.vn/wp-content/uploads/2022/01/anh-meo-cute.jpg"
-                            ></img>
+                                src="https://haycafe.vn/wp-content/uploads/2022/02/anh-meo-cute-hinh-cute-meo.jpg"
+                                fallback="https://haycafe.vn/wp-content/uploads/2022/02/anh-meo-cute-hinh-cute-meo.jpg"
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
