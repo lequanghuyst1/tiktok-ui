@@ -21,6 +21,7 @@ function Button({
 }) {
     let Comp = 'button';
     const props = {
+        onClick,
         ...passProps,
     };
     //Remove event listener when btn disable
