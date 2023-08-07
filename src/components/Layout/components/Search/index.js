@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
+import * as searchServices from '~/apiServices/searchService';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import AccountItem from '~/components/Layout/AccountItem';
 import { Wrapper as WrapperProper } from '~/components/Layout/Proper';
@@ -27,25 +28,26 @@ function Search() {
             setSearchResult([]);
             return;
         }
-        setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+
+        const fetchAPI = async () => {
+            setLoading(true);
+            const result = await searchServices.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        };
+        fetchAPI();
     }, [debounced]);
+
     const handleClear = () => {
         setSearchValue('');
         setSearchResult([]);
         inputRef.current.focus();
     };
+
     const handleHideResult = () => {
         setShowResult(false);
     };
+
     return (
         <HeadlessTippy
             interactive
