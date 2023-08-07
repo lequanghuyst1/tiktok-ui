@@ -25,6 +25,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Images';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -101,9 +102,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={'/'} className={cx('logo')}>
                     <img src={images.logo} alt="Check"></img>
-                </div>
+                </Link>
                 
                 <Search/>
 
