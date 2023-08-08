@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import styles from './header.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import Menu from '~/layouts/Proper/Menu';
+import Menu from '~/components/Proper/Menu';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { InboxIcon, MessageIcon,UploadIcon } from '~/components/Icons';
 import Image from '~/components/Images';
