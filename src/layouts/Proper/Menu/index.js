@@ -1,5 +1,6 @@
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Menu.module.scss';
 import { Wrapper as WrapperProper } from '~/layouts/Proper';
@@ -46,7 +47,7 @@ function Menu({ children, items = [], hideOnClick = true, onChange = defaultFn }
                     <WrapperProper className={cx('menu-proper')}>
                         {history.length > 1 && (
                             <Header
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((prev) => prev.slice(0, prev.length - 1));
                                 }}
@@ -62,5 +63,10 @@ function Menu({ children, items = [], hideOnClick = true, onChange = defaultFn }
         </Tippy>
     );
 }
-
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.func,
+    onChange: PropTypes.func,
+};
 export default Menu;
