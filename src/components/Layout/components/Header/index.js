@@ -1,4 +1,3 @@
-
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -46,7 +45,7 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },
+                }
             ],
         },
     },
@@ -64,7 +63,6 @@ const MENU_ITEMS = [
 const currentUser = true;
 
 function Header() {
-
     //handle Logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -106,8 +104,8 @@ function Header() {
                 <Link to={routesConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Check"></img>
                 </Link>
-                
-                <Search/>
+
+                <Search />
 
                 <div className={cx('action')}>
                     {currentUser ? (
