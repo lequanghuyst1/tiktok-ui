@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as searchServices from '~/apiServices/searchService';
+import * as searchServices from '~/Services/searchService';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import AccountItem from '~/components/Layout/AccountItem';
-import { Wrapper as WrapperProper } from '~/components/Layout/Proper';
+import AccountItem from '~/layouts/AccountItem';
+import { Wrapper as WrapperProper } from '~/layouts/Proper';
 import { SearchIcon } from '~/components/Icons';
 
 import styles from './Search.module.scss';
@@ -86,7 +86,7 @@ function Search() {
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
                     )}
-    
+
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault}>
                         <SearchIcon />

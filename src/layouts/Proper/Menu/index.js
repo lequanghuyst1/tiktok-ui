@@ -2,7 +2,7 @@ import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import styles from './Menu.module.scss';
-import { Wrapper as WrapperProper } from '~/components/Layout/Proper';
+import { Wrapper as WrapperProper } from '~/layouts/Proper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], hideOnClick = true, onChange = defaultFn}) {
+function Menu({ children, items = [], hideOnClick = true, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
 
     const current = history[history.length - 1];

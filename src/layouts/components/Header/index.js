@@ -7,11 +7,7 @@ import {
     faEllipsisVertical,
     faGear,
     faKeyboard,
-    faLanguage,
-    faMagnifyingGlass,
-    faSignIn,
     faSignOut,
-    faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -20,9 +16,9 @@ import { Link } from 'react-router-dom';
 import styles from './header.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
-import Menu from '~/components/Layout/Proper/Menu';
+import Menu from '~/layouts/Proper/Menu';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { InboxIcon, MessageIcon, SearchIcon, UploadIcon } from '~/components/Icons';
+import { InboxIcon, MessageIcon,UploadIcon } from '~/components/Icons';
 import Image from '~/components/Images';
 import Search from '../Search';
 import routesConfig from '~/config/routes';
@@ -45,7 +41,7 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                }
+                },
             ],
         },
     },
