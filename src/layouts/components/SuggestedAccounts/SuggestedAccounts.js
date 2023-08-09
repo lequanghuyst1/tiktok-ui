@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import AccountItem from "./AccountItem";
 const cx = classNames.bind(styles)
 
-function SuggestedAccount({label}) {
+function SuggestedAccount({label,hideOn}) {
     return ( 
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>

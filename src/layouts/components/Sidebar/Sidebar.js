@@ -39,7 +39,7 @@ function Sidebar() {
 
             </SuggestedAccount>
 
-            <SuggestedAccount label='Following Accounts'>
+            <SuggestedAccount label='Following Accounts' hideOn={false}>
 
             </SuggestedAccount>
         </aside>
