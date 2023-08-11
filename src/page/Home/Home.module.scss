@@ -1,6 +1,18 @@
-.wrapper {
-    padding: 20px 0;
+.recommend-item {
     display: flex;
+    position: relative;
+    padding: 20px 0;
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        background-color: rgba(22, 24, 35, 0.2);
+    }
+}
+.wrapper {
 }
 .avatar {
     width: 56px;
@@ -11,6 +23,119 @@
     margin-left: 12px;
     flex: 1;
 }
-.header{
-    
+.header {
+    position: relative;
+}
+.info {
+    display: flex;
+    align-items: center;
+    &:hover .nickname {
+        text-decoration: underline;
+    }
+}
+.nickname {
+    font-size: 1.8rem;
+    margin-right: 4px;
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+.icon {
+    color: #20d5ec;
+    font-size: 14px;
+    margin-right: 2px;
+    margin-left: 4px;
+}
+.name {
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 0.093px;
+    line-height: 2.8rem;
+}
+.btn-follow {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.desc {
+}
+.video-music {
+    font-size: 1.4rem;
+}
+.link-music {
+    display: flex;
+    align-items: center;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.name-music {
+    font-size: 1.4rem;
+    margin-left: 4px;
+}
+
+.body {
+    display: flex;
+}
+.content-video {
+    margin-top: 12px;
+    display: inline-block;
+    width: 300px;
+    height: 500px;
+    border: 4px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 12px;
+}
+.img-Poster {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.video {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.action {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.btn-action {
+    cursor: pointer;
+    background-color: transparent;
+}
+.item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(22, 24, 35, 0.06);
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+.heart {
+}
+.heart:hover {
+    .item-icon-active {
+        display: block;
+    }
+    .item-icon {
+        display: none;
+    }
+}
+.item-icon-active {
+    display: none;
+}
+.counts {
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.161px;
+    text-align: center;
 }

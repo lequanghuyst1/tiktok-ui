@@ -5,7 +5,7 @@ export const getSuggest = async (page, per_page) => {
         const res = await httpRequest.get('/users/suggested', {
             params: { page, per_page },
         });
-        
+
         return res.data;
     } catch (error) {
         console.log(error);
@@ -14,8 +14,23 @@ export const getSuggest = async (page, per_page) => {
 export const getAllSuggest = async () => {
     try {
         const res = await httpRequest.get('/users/suggested');
-        
+
         return res.meta;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const getListVideo = async (type, page) => {
+    try {
+        const res = await httpRequest.get('/videos', {
+            params: {
+                type,
+                page,
+            },
+        });
+
+        return res.data;
     } catch (error) {
         console.log(error);
     }

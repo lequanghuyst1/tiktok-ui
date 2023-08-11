@@ -21,7 +21,7 @@ function Sidebar() {
     const [listAll, setListAll] = useState(false);
     const lengthSuggested = async () => {
         getServices.getAllSuggest().then((data) => {
-            console.log(data.pagination.total);
+            //console.log(data.pagination.total);
         });
     };
     lengthSuggested();
