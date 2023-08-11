@@ -1,23 +1,24 @@
-import classNames from "classnames/bind";
-import styles from './SuggestedAccounts.module.scss'
+import classNames from 'classnames/bind';
+import styles from './SuggestedAccounts.module.scss';
 import PropTypes from 'prop-types';
-import AccountItem from "./AccountItem";
-const cx = classNames.bind(styles)
+import AccountItem from './AccountItem';
 
-function SuggestedAccount({label,hideOn}) {
-    return ( 
+const cx = classNames.bind(styles);
+
+function SuggestedAccount({ label, data = [], onclick, show, hideOn }) {
+    return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
-
-            <AccountItem></AccountItem>
-            <AccountItem></AccountItem>
-            <AccountItem></AccountItem>
-
-            <p className={cx('more-btn')}>See All</p>
+            {data.map((user) => {
+                return <AccountItem key={user.id} data={user} />;
+            })}
+            <button className={cx('more-btn')} onClick={onclick}>
+                {!show ? `See all` : `See less`}
+            </button>
         </div>
-     );
+    );
 }
 SuggestedAccount.propTypes = {
-    label: PropTypes.string.isRequired
-}
+    label: PropTypes.string.isRequired,
+};
 export default SuggestedAccount;

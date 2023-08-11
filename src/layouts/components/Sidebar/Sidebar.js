@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import * as getServices from '~/Services/userService';
 import styles from './Sidebar.module.scss';
 import config from '~/config';
 import Menu, { MenuItem } from './Menu';
@@ -12,7 +14,27 @@ import {
 } from '~/components/Icons';
 import SuggestedAccount from '../SuggestedAccounts/SuggestedAccounts';
 const cx = classNames.bind(styles);
+const init_Page = 1;
 function Sidebar() {
+    const [page, setPage] = useState(init_Page);
+    const [listSuggested, setListSuggested] = useState([]);
+    const [listAll, setListAll] = useState(false);
+    const lengthSuggested = async () => {
+        getServices.getAllSuggest().then((data) => {
+            console.log(data.pagination.total);
+        });
+    };
+    lengthSuggested();
+    useEffect(() => {
+        getServices.getSuggest(page, 5).then((data) => {
+            setListSuggested((prev) => [...prev, ...data]);
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page]);
+    const handleSeeAll = () => {
+        setPage(page + 1);
+        //setListAll(!listAll);
+    };
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -35,13 +57,14 @@ function Sidebar() {
                     icon={<LiveIcon />}
                 ></MenuItem>
             </Menu>
-            <SuggestedAccount label='Suggested Accounts'>
+            <SuggestedAccount
+                label="Suggested Accounts"
+                data={listSuggested}
+                onclick={handleSeeAll}
+                show={listAll}
+            ></SuggestedAccount>
 
-            </SuggestedAccount>
-
-            <SuggestedAccount label='Following Accounts' hideOn={false}>
-
-            </SuggestedAccount>
+            <SuggestedAccount label="Following Accounts" hideOn={false}></SuggestedAccount>
         </aside>
     );
 }
